@@ -83,7 +83,8 @@ import {merge} from 'lodash';
   
     this.setState({mostUsedRef: finalValue[0]});
       } else {
-       //window.location.assign('/admin');
+        localStorage.setItem('total_user',(JSON.stringify(response.data.users.length)));
+        localStorage.setItem('saveAll',(JSON.stringify(response.data.users)));
       }
   }
   
