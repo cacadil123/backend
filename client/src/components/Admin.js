@@ -58,7 +58,7 @@ import {merge} from 'lodash';
           Axios.get('http://18.220.236.209/api/users/all-users')
   .then(function (response) {
     // handle success
-    console.log('response', response.data.users.length);
+   
     const size = response.data.users.length;
     localStorage.setItem('total_user',(JSON.stringify(response.data.users.length)));
     localStorage.setItem('saveAll',(JSON.stringify(response.data.users)));
@@ -83,8 +83,7 @@ import {merge} from 'lodash';
   
     this.setState({mostUsedRef: finalValue[0]});
       } else {
-        localStorage.setItem('total_user',(JSON.stringify(response.data.users.length)));
-        localStorage.setItem('saveAll',(JSON.stringify(response.data.users)));
+       
       }
   }
   
@@ -104,7 +103,7 @@ import {merge} from 'lodash';
                   <div className="dataTable">
                   <h1>Register User Information</h1>
                     <Datatable
-                      agentDashboardData={newResponse && newResponse.data.users}
+                      agentDashboardData={newResponse && newResponse.data.users || []}
                       flag ={true}
                     
                     />
@@ -115,7 +114,7 @@ import {merge} from 'lodash';
                   <div className="dataTable">
                   <h1>Refferal Information</h1>
                     <ReffTable
-                      agentDashboardData={newResponse && newResponse.data.users}
+                      agentDashboardData={newResponse && newResponse.data.users || []}
                       noCount={count}
                     />
 
@@ -128,7 +127,8 @@ import {merge} from 'lodash';
                   <div className="dataTable">
                   <h1>Payments  Information</h1>
                     <Datatable
-                      agentDashboardData={newResponse && newResponse.data.payment}
+                      agentDashboardData={newResponse && newResponse.data.payment 
+                      || []}
                       flag={false}
                     />
                   </div>
