@@ -17,7 +17,7 @@ function getUnique(arr, comp) {
 }
 
 const dataMapping = (data, noCount) => {
-
+    console.log('daa',data);
     const datatableData =
     data &&
     data.reverse().map(item =>

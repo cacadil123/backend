@@ -41,7 +41,8 @@ import {merge} from 'lodash';
   
     return merge({user: modes,noCount: noCount});
   }
-    componentDidMount(){
+    componentWillMount(){
+  
         Axios.get('http://localhost:8001/api/users/admin').then(function (response) {
             // handle success
            localStorage.setItem('response', JSON.stringify(response));
@@ -81,6 +82,7 @@ import {merge} from 'lodash';
   this.setState({mostUsedRef: finalValue[0]});
     }
   render() {
+    console.log('render');
       const newResponse =  JSON.parse(localStorage.getItem('response') && localStorage.getItem('response'));
       const count = JSON.parse(localStorage.getItem('noCount'));
     return (
