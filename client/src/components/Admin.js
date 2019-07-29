@@ -83,7 +83,7 @@ import {merge} from 'lodash';
   
     this.setState({mostUsedRef: finalValue[0]});
       } else {
-       window.location.assign('/admin');
+       //window.location.assign('/admin');
       }
   }
   
