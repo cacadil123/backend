@@ -43,8 +43,9 @@ import {merge} from 'lodash';
   }
     componentWillMount(){
   
-        Axios.get('http://localhost:8001/api/users/admin').then(function (response) {
+        Axios.get('http://18.220.236.209/api/users/admin').then(function (response) {
             // handle success
+
            localStorage.setItem('response', JSON.stringify(response));
           })
           .catch(function (error) {
@@ -54,7 +55,7 @@ import {merge} from 'lodash';
           .finally(function () {
             // always executed
           });
-          Axios.get('http://localhost:8001/api/users/all-users')
+          Axios.get('http://18.220.236.209/api/users/all-users')
   .then(function (response) {
     // handle success
     console.log('response', response.data.users.length);
