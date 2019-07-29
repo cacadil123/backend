@@ -1,0 +1,44 @@
+.blocked {
+    background: #828282;
+    border: 1px solid #828282;
+    color: #ffffff;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.approved {
+    background: #30b744;
+    border: 1px solid #30b744;
+    color: #ffffff;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight: 600;
+
+}
+
+.pending {
+    background: #00acff;
+    border: 1px solid #00acff;
+    color: #ffffff;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.rejected {
+    background: #f34c49;
+    border: 1px solid #f34c49;
+    color: #ffffff;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight: 600;
+}
