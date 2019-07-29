@@ -71,19 +71,23 @@ import {merge} from 'lodash';
     // always executed
   });
  
-  let result = JSON.parse(localStorage.getItem('saveAll') && localStorage.getItem('saveAll')).map(({ refferalCode }) => refferalCode)
+  if(localStorage.getItem('saveAll')!==null){
+    let result = JSON.parse(localStorage.getItem('saveAll') && localStorage.getItem('saveAll')).map(({ refferalCode }) => refferalCode)
   
-  let removeEmpty=result.filter(v=>v!='');
-
-  let finalValue = this.getModes(removeEmpty);
-  localStorage.setItem('noCount', JSON.stringify(finalValue));
-  this.setState({size: localStorage.getItem('total_user')});
-
-
-  this.setState({mostUsedRef: finalValue[0]});
-    }
+    let removeEmpty=result.filter(v=>v!='');
+  
+    let finalValue = this.getModes(removeEmpty);
+    localStorage.setItem('noCount', JSON.stringify(finalValue));
+    this.setState({size: localStorage.getItem('total_user')});
+  
+  
+    this.setState({mostUsedRef: finalValue[0]});
+      } else {
+        window.location.assign('/');
+      }
+  }
+  
   render() {
-    console.log('render');
       const newResponse =  JSON.parse(localStorage.getItem('response') && localStorage.getItem('response'));
       const count = JSON.parse(localStorage.getItem('noCount'));
     return (
